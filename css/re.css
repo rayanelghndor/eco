@@ -5,7 +5,7 @@
     font-family: "poppins" ,sans-serif;
 }
 body{
-    background: url(rre.avif) no-repeat;
+    background-color: black;
     background-position: center;
     background-size: cover;
     min-height: 100vh;
@@ -90,49 +90,7 @@ input::placeholder{
     position: relative;
     top: 25px;
 }
-.popup{
-    width: 400px;
-    background-color: #fff;
-    border-radius: 6px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%,-50%) scale(0);
-    transition: transform .4s , top .4s;
-    visibility: hidden;
-    text-align: center;
-    padding: 0 30px 30px;
-    height: 338px;
-    color: black;
-}
-.popup ion-icon{
-    color: #00ff00;
-    font-size: 50px;
 
-}
-.popup button{
-    width: 100%;
-    background: #00ff00;
-    padding: 10px 0;
-    margin-top: 50px;
-    border: none;
-    outline: none;
-    font-size: 18px;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, .5);
-}
-.popup a{
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 2px;
-}
-.open-slide{
-    transform: translate(-50%,-50%)scale(1);
-    visibility: visible;
-}
 .khg{
    
     background-position: center;
@@ -160,4 +118,47 @@ ul li a:hover{
     transform: scale(1.2);
     transition: 0.3s ;
     color: #e80202;
+}
+.popup{
+    width: 400px;
+    background-color: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: transform .4s , top .4s;
+    text-align: center;
+    visibility: hidden;
+    padding: 0 30px 30px;
+    height: 338px;
+    color: black;
+}
+.popup ion-icon{
+    color: #00ff00;
+    font-size: 50px;
+}
+.popup button{
+    width: 100%;
+    background: #00ff00;
+    padding: 10px 0;
+    margin-top: 50px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, .1);
+}
+.popup a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+.open-slide{
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+    visibility: visible;
 }
