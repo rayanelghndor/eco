@@ -1,36 +1,41 @@
-document.getElementById('loginForm').addEventListener('submit', function (event) {
-  event.preventDefault();
-
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-
-  const userData = JSON.parse(localStorage.getItem('data'));
-
-
-
-
-  if (username === userData.username && password === userData.password) {
-    localStorage.setItem('currentUser', username);
-    window.location.href = 'index.html';
-  }
-  else if (username && password) {
-    let getUsers = async function (username, password) {
-
-      let response = await fetch(`https://fakestoreapi.com/users`);
-      let users = await response.json();
-
-      for (user1 of users) {
-        if (username === user1.username && password === user1.password) {
-          alert("login Successfully  for api ");
-          localStorage.setItem('currentUser', username);
-          window.location.href = 'index.html';
-        }
-      }
+function validation(){
+    if(document.Formfill.Username.value==""){
+        document.getElementById("result").innerHTML="Enter Username*"
+        return false;
     }
-    getUsers(username, password)
-
-  } else {
-    alert('Invalid username or password!');
-
-  }
-});
+    else  if(document.Formfill.Username.value.length<6){
+        document.getElementById("result").innerHTML="Atleast six letter*"
+        return false;
+    }
+    else  if(document.Formfill.Email.value==""){
+        document.getElementById("result").innerHTML="Enter your Email*"
+        return false;
+    }
+    else  if(document.Formfill.Password.value==""){
+        document.getElementById("result").innerHTML="Enter your Password*"
+        return false;
+    }
+    
+    else  if(document.Formfill.Cpassword.value==""){
+        document.getElementById("result").innerHTML="Enter Confirm Password*"
+        return false;
+    }
+    else  if(document.Formfill.Password.value!==document.Formfill.Cpassword.value){
+        document.getElementById("result").innerHTML="Password does 'nt matched*"
+        return false;
+    }
+    else  if(document.Formfill.Password.value.length<6){
+        document.getElementById("result").innerHTML="Password must be 6-digi*"
+        return false;
+    }
+    else  if(document.Formfill.Password.value == document.Formfill.Cpassword.value){
+        popup.classList.add("open-slide")
+        return false;
+    }
+    
+   
+}
+var popup=document.getElementById('popup')
+function CloseSlide(){
+    popup.classlist.remove("open-slide")
+}
